@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Tailwind Пример</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/CSS/style.css"/>
+  <link rel="stylesheet" href="/CSS/media.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- ✅ Подключаем Tailwind через CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- <script>
+      tailwind.config = {
+        
+        theme: {
+          extend: {
+            fontFamily: {
+              jost: ['Jost', 'sans-serif'],
+            }
+          }
+        }
+      }
+  </script> -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            jost: ['Jost', 'sans-serif'],
+          },
+          keyframes: {
+            
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+          },
+          animation: {
+            float: 'float 3s ease-in-out infinite',
+            'spin-slow': 'spin 5s linear infinite',
+          },
+        },
+      },
+      plugins: [],
+    };
+  </script>
+  
+</head>
+<body>
+  <!------------------------------- Блок навигация ------------------------------------->
+  <nav class="text-white px-4 py-3 relative navigation">
+    <div class="flex items-center justify-between relative">
+      <!-- /* Лого слева */ -->
+      <div class="ml-10 logo-menu"></div>
+
+  
+      <ul class="hidden md:flex gap-10 text-sm font-light font-medium absolute left-1/2 transform -translate-x-1/2 font-jost text-uppercase">
+        <li><a href="#" class="hover:text-red-500 font-light">Главная</a></li>
+        <li><a href="#" class="hover:text-red-500 font-light">О нас</a></li>
+        <li><a href="#" class="hover:text-red-500 font-light">Проекты</a></li>
+        <li><a href="#" class="hover:text-red-500 font-light">Цены</a></li>
+        <li><a href="#" class="hover:text-red-500 font-light">Проекты</a></li>
+        <li><a href="#" class="hover:text-red-500 font-light">Блог</a></li>
+      </ul>
+
+      <ul class="flex gap-10 text-sm">
+        <li class="flex gap-2 mr-10">
+          <a href="/?lang=ru" class="hover:text-red-500 font-light">Ru</a>
+          <a href="/?lang=en" class="hover:text-red-500 font-light">En</a>
+        </li>
+      </ul>
+
+      <!-- /* Бургер справа на mobile */ -->
+      <!-- <div className="md:hidden">
+        <button onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div> -->
+    </div>
+
+    <!-- /* Меню на mobile */ -->
+    <!-- {isOpen && ( -->
+      <ul class="md:hidden flex flex-col mt-4 gap-2 text-sm font-medium">
+        <li><a href="#" class="hover:text-gray-300">Home</a></li>
+        <li><a href="#" class="hover:text-gray-300">About</a></li>
+        <li><a href="#" class="hover:text-gray-300">Contact</a></li>
+      </ul>
+    <!-- )} -->
+  </nav>
+  <!------------------------------- Блок навигация ------------------------------------->
+
+  <!------------------------------- Блок главная  ------------------------------------->
+  <div class="flex flex-col items-center text-white relative">
+    <img src="/images/main-section.png" alt="Image" class="w-full md:w-1/2  object-contain z-1" />
+
+    <button class="flex items-center absolute top-4 rounded-full border border-gray-600 px-5 py-2 hover:border-red-500 font-jost gap-2 font-light" style="font-size: 10px">
+      <img src="/images/bast-main.svg" alt="Логотип" class="">
+      <span class="font-medium">Лучшее решение</span>
+    </button>
+
+    <h3 class="absolute mt-[110px] z-10 text-center text-base tracking-widest max-w-xs font-jost hidden sm:block"style="font-weight:400">Разработка сайтов для вашего бизнесса</h3>
+
+    <img src="/images/Mars-big.svg" alt="Image" class="absolute  w-full md:w-1/2  object-contain z-0 mt-[100px] main-logo-big" />
+
+    <h1 class="mt-[150px] md:w-[570px] font-extrabold text-5xl text-center font-jost mt-10">Разработка <span class="italic font-light text-orange-700 text-5xl">сайтов под ключ</span> от лендинга до нтернет-магазина</h1>
+    <h2 class="mt-[40px] text-center font-jost text-zinc-500  md:w-[570px] transition duration-300 hover:drop-shadow-[0_0_6px_rgba(255,165,0,0.7)] cursor-pointer">Функциональные и уникальные сайты под любые задачи — от одностраничных решений до многостраничных и корпоративных проектов с продуманной логикой и дизайном</h2>
+
+    <!-- картинки -->
+    <img src="/images/krestic.svg"
+    alt="Лого"
+    class="absolute mt-[120px] mr-[200px]"/>
+
+    <img src="/images/krestic.svg"
+    alt="Лого"
+    class="absolute mt-[120px] ml-[200px] "/>
+
+    <img src="/images/krestic.svg"
+    alt="Лого"
+    class="absolute mt-[300px] mr-[200px]"/>
+
+    <img src="/images/krestic.svg"
+    alt="Лого"
+    class="absolute mt-[300px] ml-[200px]"/>
+    <img src="/images/krestic.svg"
+    alt="Лого"
+    class="absolute mt-[500px] mr-[200px]"/>
+    
+    <img src="/images/krestic.svg"
+    alt="Лого"
+    class="absolute mt-[500px] ml-[200px]"/>
+
+    <img src="/images/grai.svg"
+    alt="Лого"
+    class="absolute mt-[300px]"/>
+    <!-- картинки -->
+
+    
+
+  
+
+    <img src="/images/kosmonavt.svg"
+    alt="Лого"
+    class="absolute mt-[150px] mr-[20px] animate-float"/>
+
+    <div class="flex items-center justify-center  gap-3 mt-5">
+      <a href=""><button class="flex items-center justify-center px-4 py-2 text-white rounded-full mt-[30px] font-jost font-light hover:bg-zinc-800 border border-zinc-600" style="width: 180px; height: 40px;">
+        <span class="font-thin">связь</span>
+      </button></a>
+      <a href=""><button class="flex items-center justify-center px-4 py-2 text-white rounded-full mt-[30px] font-jost font-light hover:bg-amber-950 border border-amber-900 hidden sm:block" style="width: 250px; height: 40px;">
+        <span class="font-thin">смотреть проекты</span>
+      </button></a>
+
+    </div>
+</div>
+  </div>
+<!------------------------------- Блок главная  ------------------------------------->
+
+<!------------------------------- Блок наши технологии   ------------------------------------->
+<div class="w-full h-48 overflow-x-hidden whitespace-nowrap flex justify-center items-center max-w-[500px] mx-auto mt-20">
+  <div class="inline-flex gap-20 px-4 slider">
+    <img src="/images/tailwind.svg" alt="Image 1" class="h-10 w-auto flex-shrink-0" />
+    <img src="/images/react.svg" alt="Image 2" class="h-10 w-auto flex-shrink-0" />
+    <img src="/images/django.svg" alt="Image 1" class="h-10 w-auto flex-shrink-0" />
+    <img src="/images/python.svg" alt="Image 2" class="h-10 w-auto flex-shrink-0" />
+    <img src="/images/vite.svg" alt="Image 1" class="h-10 w-auto flex-shrink-0" />
+    <img src="/images/nodejs.svg" alt="Image 1" class="h-10 w-auto flex-shrink-0" />
+    <img src="/images/tailwind.svg" alt="Image 1" class="h-10 w-auto flex-shrink-0" />
+    <img src="/images/react.svg" alt="Image 2" class="h-10 w-auto flex-shrink-0" />
+    <img src="/images/django.svg" alt="Image 1" class="h-10 w-auto flex-shrink-0" />
+    <img src="/images/python.svg" alt="Image 2" class="h-10 w-auto flex-shrink-0" />
+    <img src="/images/vite.svg" alt="Image 1" class="h-10 w-auto flex-shrink-0" />
+    <img src="/images/nodejs.svg" alt="Image 1" class="h-10 w-auto flex-shrink-0" />
+  </div>
+</div>
+<div class="flex justify-center items-center">
+  <a href=""><button class="flex items-center justify-center px-4 py-2 text-white rounded-full mt-[30px] font-jost hover:bg-zinc-800 border border-zinc-600" style="width: 180px; height: 40px;">
+    <span class="font-light text-xs">все технологии</span>
+  </button></a>
+</div>
+
+<!------------------------------- Блок наши технологии   ------------------------------------->
+
+<!------------------------------- Блок преимущества дестоп------------------------------------->
+<div class="flex items-center justify-center mt-20 advantages-destop">
+  <img src="/images/crug-destop.svg" alt="Логотип" class="object-contain z-1 relative">
+
+  <!-- контейнер левый -->
+  <div class="absolute font-jost w-[200px] text-white mt-[-400px] mr-[700px]">
+    <h4 style="font-size:14px;">Дизайн с нуля — без шаблонов. Учитываем стиль бренда, UX и современные тренды.</h4>
+  </div>
+  <!-- середина -->
+  <h5 class="absolute font-jost w-[100px] text-white mt-[150px] mr-[700px] text-3xl text-center pulse-glow" style="text-align:center;">
+    Сильный дизайн 
+  </h5>
+  <!-- контейнер левый -->
+
+    <!-- контейнер левый -->
+    <div class="absolute font-jost w-[200px] text-white mt-[-400px] ml-[700px]">
+      <h4 style="font-size:14px;">Разрабатываем уникальные решения на React и Django с полным функционалом под ваши задачи.</h4>
+    </div>
+    <!-- середина -->
+    <h5 class="absolute font-jost w-[100px] text-white mt-[150px] ml-[550px] text-3xl pulse-glow" style="text-align:center;">
+      Индивидуальное решение 
+    </h5>
+    <!-- контейнер левый -->
+
+     <!-- контейнер центр -->
+     <div class="absolute font-jost w-[200px] text-white mt-[-520px]">
+      <h4 style="font-size:14px;">Разработки от дизайна до програмирования ui и серверной части а также индивидуального функциона</h4>
+    </div>
+    <!-- середина -->
+    <h5 class="absolute font-jost w-[300px]  text-white mt-[150px] ml-[30px] text-3xl pulse-glow" style="text-align: center;">
+      Полный цикл разработки 
+    </h5>
+    <!-- контейнер центр -->
+
+</div>
+<!------------------------------- Блок преимущества дестоп------------------------------------->
+
+<!------------------------------- Блок преимущества мобильн------------------------------------->
+<div class="flex items-center justify-center mt-20 advantages-mobile flex-col">
+
+
+  <!-- верхний контейнер -->
+  <div>
+    <img src="/images/crug-left.svg" alt="Логотип" class="object-contain z-1 relative">
+    <div class="absolute font-jost w-[200px] text-white mt-[-450px] ml-[50px]">
+      <h4 style="font-size:14px;">Дизайн с нуля — без шаблонов. Учитываем стиль бренда, UX и современные тренды.</h4>
+    </div>
+    <!-- середина -->
+    <h5 class="absolute font-jost w-[100px] text-white mt-[-180px]  ml-[100px] text-3xl text-center pulse-glow" style="text-align:center;">
+      Сильный дизайн 
+    </h5>
+  </div>
+  <!-- верхний контейнер -->
+
+   <!-- средний контейнер -->
+  <div class="" style="margin-top:100px;">
+    <img src="/images/crug-center.svg" alt="Логотип" class="object-contain z-1 relative">
+    <div class="absolute font-jost w-[200px] text-white mt-[-430px] ml-[80px]">
+      <h4 style="font-size:14px;">Разработки от дизайна до програмирования ui и серверной части а также индивидуального функциона</h4>
+    </div>
+      <!-- середина -->
+    <h5 class="absolute font-jost w-[100px] text-white mt-[-200px]  ml-[100px] text-3xl text-center pulse-glow" style="text-align:center;">
+        Полный цикл  
+    </h5>
+  </div>
+  <!-- средний контейнер -->
+   <!-- правая часть  контейнер -->
+   <div class="" style="margin-top:100px;">
+    <img src="/images/crug-right.svg" alt="Логотип" class="object-contain z-1 relative">
+    <div class="absolute font-jost w-[200px] text-white mt-[-480px] ml-[80px]">
+      <h4 style="font-size:14px;">Разработки от дизайна до програмирования ui и серверной части а также индивидуального функциона/h4>
+    </div>
+      <!-- середина -->
+    <h5 class="absolute font-jost w-[100px] text-white mt-[-200px]  ml-[50px] text-3xl text-center pulse-glow" style="text-align:center;">
+      Индивидуальное решение   
+    </h5>
+  </div>
+  <!-- правая часть -->
+</div>
+<!------------------------------- Блок преимущества мобильн------------------------------------->
+
+<!------------------------------- Блок карта------------------------------------->
+<div class="w-full flex justify-center section-card-main">
+
+  <div class="overflow-x-auto overflow-y-hidden py-6">
+    <!-- карта 1 -->
+    <div class="flex space-x-4">
+       <!-- карта 1 -->
+      <div class="card-main w-[280px] h-[210px] flex  flex-col  text-white relative shrink-0">
+
+        <!-- ikon -->
+        <div class="icon-main-card flex items-center flex-row justify-between absolute top-0 left-0 w-full px-2 mt-2">
+          <img src="/images/star-icon.svg" alt="logo-card-style" class="animate-spin-slow"/>
+          <img src="/images/elips-card.svg" alt="logo-card-style"/>
+        </div>
+        <!-- ikon -->
+
+
+        <div  class="flex items-start pl-4" style="margin-top:80px;">
+          <h5 class="font-jost">Одностраничные </h5>
+        </div>
+      
+        <div class="mt-5 	px-4">
+          <h6 class="font-jost font-light text-sm text-zinc-400">Быстрые и эффективные, идеально подходят для презентации одного продукта или услуги.</h6>
+        </div>
+
+        <img src="/images/grai.svg"
+        alt="Лого"
+        class="absolute ml-[50px]" style="opacity:60%;"/>
+
+        <img src="/images/text-decor.svg"
+        alt="Лого"
+        class="absolute ml-[255px] mt-[50px]"/>
+
+
+        <span class="absolute ml-[250px] mt-[180px] font-jost font-light text-xs" style="opacity:40%;">01</span>
+
+     
+      </div>
+      <!-- карта 1 -->
+
+      <!-- карта 2 -->
+      <div class="card-main w-[280px] h-[210px] flex  flex-col text-white relative shrink-0">
+
+        <!-- ikon -->
+         <div class="icon-main-card flex items-center flex-row justify-between absolute top-0 left-0 w-full px-2 mt-2">
+          <img src="/images/racket-icon.svg" alt="logo-card-style" class="animate-spin-slow"/>
+          <img src="/images/elips-card.svg" alt="logo-card-style"/>
+         </div>
+        <!-- ikon -->
+
+        <div  class="flex items-start pl-4" style="margin-top:80px;">
+          <h5 class="font-jost">Многостраничные</h5>
+        </div>
+      
+        <div class="mt-5 	px-4">
+          <h6 class="font-jost font-light text-sm text-zinc-400">Удобная структура для компаний с большим объёмом информации, услуг или контента.</h6>
+        </div>
+
+        <img src="/images/grai.svg"
+        alt="Лого"
+        class="absolute ml-[50px]" style="opacity:60%;"/>
+
+        <img src="/images/text-decor.svg"
+        alt="Лого"
+        class="absolute ml-[255px] mt-[50px]"/>
+
+        <span class="absolute ml-[250px] mt-[180px] font-jost font-light text-xs" style="opacity:40%;">02</span>
+
+        
+         
+      </div>
+      <!-- карта 2 -->
+
+      <!-- карта 3-->
+      <div class="card-main w-[280px] h-[210px] flex  flex-col text-white relative shrink-0">
+
+        <!-- ikon -->
+         <div class="icon-main-card flex items-center flex-row justify-between absolute top-0 left-0 w-full px-2 mt-2">
+          <img src="/images/planat.svg" alt="logo-card-style" class="animate-spin-slow"/>
+          <img src="/images/elips-card.svg" alt="logo-card-style"/>
+         </div>
+        <!-- ikon -->
+
+        <div  class="flex items-start pl-4" style="margin-top:80px;">
+          <h5 class="font-jost">Интернет-магазины</h5>
+        </div>
+      
+        <div class="mt-5 	px-4">
+          <h6 class="font-jost font-light text-sm text-zinc-400">Полноценные площадки для онлайн-продаж с каталогом, корзиной и системой оплаты.</h6>
+        </div>
+
+        <img src="/images/grai.svg"
+        alt="Лого"
+        class="absolute ml-[50px]" style="opacity:60%;"/>
+
+        <img src="/images/text-decor.svg"
+        alt="Лого"
+        class="absolute ml-[255px] mt-[50px]"/>
+
+        <span class="absolute ml-[250px] mt-[180px] font-jost font-light text-xs" style="opacity:40%;">03</span>
+
+        
+
+      </div>
+      <!-- карта 3-->
+      
+    </div>  
+
+  </div>
+
+</div>
+<!------------------------------- Блок карта------------------------------------->
+
+<!------------------------------- Блок график------------------------------------->
+<div class="flex items-center justify-center section-schedule flex-col">
+  <!-- text -->
+  <div class="flex items-center justify-center">
+    <h5 class="font-jost text-white text-4xl text-center"><span style="color:#D34725">Эффективное</span> <span class="text-4xl italic">решение</span><br><span class="font-light">для вашего бизнеса</span></h5>
+  </div>
+  <!-- text -->
+  <div class="schedule-card flex flex-col lg:flex-row gap-5 column-section-schedule">
+    <!-- карта 1-->
+    <div class="schedule-card-one sm:w-[600px] w-[300px] h-[620px] sm:h-[380px] relative">
+      <p class="px-5 font-jost mt-5 font-light text-sm text-zinc-400">Мы предлагаем полный цикл разработки веб-ресурсов — от дизайна до запуска. Помогаем компаниям эффективно перенести бизнес в онлайн и увеличить конверсии за счёт продуманной структуры, адаптивного дизайна и современных технологий.</p>
+      <h6 class="px-5 font-jost mt-5 text-3xl text-zinc-50"><span style="color:#D34725" class="italic">Разработка веб-ресурсов </span>- это не просто создание сайта, это  инструмент для роста  вашего бизнесса</h6>
+
+      <div class="flex flex-row px-5 gap-3 mt-5 items-center">
+        <img src="/images/planat.svg" alt="logo-image">
+        <span class="font-jost text-zinc-50 text-sm">Привлечении клиентов</span>
+      </div>
+      <div class="flex flex-row px-5 gap-3 mt-5 items-center">
+        <img src="/images/planat.svg" alt="logo-image">
+        <span class="font-jost text-zinc-50 text-sm">Удобстве взаимодействия</span>
+      </div>
+      <div class="flex flex-row px-5 gap-3 mt-5 items-center">
+        <img src="/images/planat.svg" alt="logo-image">
+        <span class="font-jost text-zinc-50 text-sm">Оптимизации бизнес-процессов</span>
+      </div>
+
+      <img src="/images/rock-style.svg"
+      alt="Лого"
+      class="absolute ml-0 mt-[-90px] sm:ml-[255px] "/>
+    </div> 
+    <!-- карта 1-->
+    <!-- карта 2-->
+    <div class="schedule-card-two w-[300px] sm:w-[600px] lg:w-[300px] h-[380px] flex flex-row content-end justify-center gap-4">
+      <div class="flex flex-col gap-3 items-center justify-center">
+        <span class="font-jost text-zinc-50 text-sm text-zinc-400">60%</span>
+        <div style="width:49px; height:180px; background-color:#00FF9A; border-radius: 40px;"></div>
+        
+      </div>
+      <div class="flex flex-col gap-3 items-center justify-center">
+        <div style="width:49px; height:220px; background-color:#FF3100; border-radius: 40px;"></div>
+        <span class="font-jost text-xl text-orange-900">90%</span>
+      </div>
+      <div class="flex flex-col gap-3 items-center justify-center">
+        <span class="font-jost text-zinc-50 text-sm text-zinc-600">30%</span>
+        <div style="width:49px; height:130px; background-color:#FFFFFF; border-radius: 40px;"></div>
+      </div>
+
+    </div>
+    <!-- карта 2-->
+  </div>
+
+
+</div>
+<!------------------------------- Блок график------------------------------------->
+
+<!------------------------------- Блок текст------------------------------------->
+<div class="section-text-decor flex items-center flex-row gap-3 ml-5" style="margin-top:50px;">
+  <h6 class="font-jost text-zinc-50 text-sm">НАШИ <span class="italic text-xl" style="color:#CE664D;">цены</span></h6>
+  <img src="/images/text-mars.svg" alt="logo-decor" class="animate-spin-slow"/>
+
+</div>
+<!------------------------------- Блок карта job------------------------------------->
+<div class="section-card-job">
+ 
+  <div class="flex flex-row items-center justify-center gap-2">
+    <div class="card-job-one w-[470px] h-[280px] relative">
+      <h5 class="font-jost text-zinc-50 text-3xl mt-10 pl-10">Уникальный дизайн</h5>
+      <h6 class="font-jost text-zinc-400 mt-10 mx-10">Дизайн с нуля — без шаблонов. Мы создаём уникальный визуальный стиль, отражающий характер вашего бренда. Упор на креатив, UX и современные тренды позволяет нам делать интерфейсы не только красивыми, но и удобными для пользователей.</h6>
+
+      <img src="/images/card-job-one.svg"
+      alt="Лого"
+      class="absolute mt-[-170px] ml-[220px]"/>
+
+      <img src="/images/card-decor.svg"
+      alt="Лого"
+      class="absolute  mt-[-170px] ml-[-10px]"/>
+
+      <div class="flex flex-row items-center justify-center gap-3 rotate-90 origin-left absolute ml-[20px] mt-[-90px]">
+        <div class="w-[50px] h-[1px] bg-[#FF3100]"></div>
+        <h5 class="font-jost" style="color:#FF3100">01</h5>
+      </div>
+
+
+    </div>
+    <div class="card-job-two w-[410px] h-[280px]">
+     
+      <h6 class="font-jost text-zinc-400 mt-10 mx-10">Дизайн с нуля — без шаблонов. Мы создаём уникальный визуальный стиль, отражающий характер вашего бренда. Упор на креатив, UX и современные тренды позволяет нам делать интерфейсы не только красивыми, но и удобными для пользователей.</h6>
+      <h5 class="font-jost text-zinc-50 text-3xl mt-10 pl-10">Адаптивная вёрстка</h5>
+
+      <img src="/images/card-job-two.svg"
+      alt="Лого"
+      class="absolute  w-[350px] mt-[200px] ml-[20px]"/>
+
+      <img src="/images/card-decor-two.svg"
+      alt="Лого"
+      class="absolute  w-[350px] mt-[-250px] ml-[150px]"/>
+
+      <div class="flex flex-row items-center justify-center gap-3  absolute ml-[40px] mt-[-240px]">
+        <div class="w-[50px] h-[1px] bg-[#FF3100]"></div>
+        <h5 class="font-jost" style="color:#FF3100">02</h5>
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+<!------------------------------- Блок карта job------------------------------------->
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+/* глобально */
+body {
+    background-color: #0E1520;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #E9EBEB;
+}
+/* глобально */
+  
+
+
+/* навигация */
+.logo-menu{
+
+    background-image: url(/images/logo-mars.svg);
+    width: 150px;
+    height: 28px;
+    font-weight: 300;
+}
+.navigation {
+
+    background-color:#0E1520;
+}
+/* навигация */
+
+/* Блок главная */
+.main-text{
+
+    margin-top: 130px;
+}
+/* Блок главная */
+
+/* Блок  наши технологии */
+
+@keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+}
+
+.slider {
+    animation: slide 20s linear infinite;
+}
+
+
+/* Блок  наши технологии */
+
+/* Блок  преимущества */
+
+/* Блок  преимущества */
+
+
+.pulse-glow {
+  animation: pulse-glow 1s ease-in-out infinite;
+  text-shadow: 0 0 5px white;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    text-shadow: 0 0 5px white;
+  }
+  50% {
+    text-shadow: 0 0 10px white;
+  }
+}
+/* Блок  преимущества */
+
+
+.advantages-mobile {
+  display: none !important;
+}
+/* Блок  преимущества */
+
+
+/* Блок  card-main */
+
+
+.section-card-main{
+  margin-top: 200px;
+  
+}
+
+.card-main {
+  /* background-color: rgba(227, 227, 227, 0.03); */
+  background: linear-gradient(
+  90deg, 
+  rgba(227, 227, 227, 0.03) 0%, 
+  rgba(166, 166, 166, 0.02) 100%
+);
+
+
+  border: 1px solid rgba(247, 247, 247, 0.08); /* 0.2 = 10% opacity */
+  border-radius: 20px;
+}
+/* Блок  card-main */
+
+/* Блок  график*/
+
+.section-schedule {
+  margin-top: 100px;
+}
+.column-section-schedule {
+  margin-top: 100px;
+}
+.schedule-card-two,
+.schedule-card-one {
+  background-color: rgba(217, 217, 217, 0.04);
+  border-radius: 40px;
+
+}
+/* Блок  график*/
+
+/* Блок  card-job */
+.card-job-one,
+.card-job-two {
+  /* background-color: rgba(217, 217, 217, 0.04); */
+  border-radius: 40px;
+  background: linear-gradient(
+    90deg, 
+    rgba(227, 227, 227, 0.03) 0%, 
+    rgba(98, 98, 98, 0.02) 100%
+  )  
+
+}
+/* Блок  card-job */
+
+
