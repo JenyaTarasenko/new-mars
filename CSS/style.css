@@ -47,7 +47,7 @@ a {
 }
 
 .slider {
-    animation: slide 20s linear infinite;
+  animation: slide 20s linear infinite;
 }
 
 
@@ -109,18 +109,25 @@ a {
 }
 .column-section-schedule {
   margin-top: 100px;
+  
 }
 .schedule-card-two,
 .schedule-card-one {
-  background-color: rgba(217, 217, 217, 0.04);
   border-radius: 40px;
-
+  background: linear-gradient(
+    90deg, 
+    rgba(227, 227, 227, 0.03) 0%, 
+    rgba(98, 98, 98, 0.02) 100%
+  ) 
+  
+ 
 }
 /* Блок  график*/
 
 /* Блок  card-job */
 .card-job-one,
-.card-job-two {
+.card-job-two,
+.card-job-three {
   /* background-color: rgba(217, 217, 217, 0.04); */
   border-radius: 40px;
   background: linear-gradient(
@@ -128,8 +135,11 @@ a {
     rgba(227, 227, 227, 0.03) 0%, 
     rgba(98, 98, 98, 0.02) 100%
   )  
-
 }
+
+
 /* Блок  card-job */
+/*  Блок цена  */
+/*  Блок цена  */
 
 

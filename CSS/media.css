@@ -7,3 +7,10 @@
         display: flex !important;
     }
 }
+
+/* @media (max-width: 1022px){
+    .icon-card-two {
+        margin-top: -240px;
+      }
+   
+} */
