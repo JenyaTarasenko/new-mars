@@ -140,6 +140,25 @@ a {
 
 /* Блок  card-job */
 /*  Блок цена  */
+.section-price-elips-mobile{
+  display: none !important;
+}
 /*  Блок цена  */
+/*  section-projects-card  */
 
-
+.section-projects-card {
+  margin-top:900px !important;
+}
+.text-projects {
+  margin-top: 140px;
+  margin-left: 40px;
+}
+.text-projects-title {
+  margin-top: 20px;
+  margin-left: 40px;
+}
+.button-card {
+  margin-top: 40px;
+  margin-left:260px;
+}
+/*  section-projects-card  */

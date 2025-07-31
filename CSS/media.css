@@ -8,6 +8,17 @@
     }
 }
 
+@media (max-width: 1035px){
+    .section-price-elips-destop{
+        display: none !important;
+    }
+    .section-price-elips-mobile{
+        display: flex !important;
+    }
+    .section-projects-card{
+        margin-top: 100px !important;
+    }
+}
 /* @media (max-width: 1022px){
     .icon-card-two {
         margin-top: -240px;
