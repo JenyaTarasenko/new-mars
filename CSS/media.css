@@ -25,3 +25,14 @@
       }
    
 } */
+
+@media (max-width: 600px){
+    .design-destop {
+        display: none;
+    }
+    .design-mob{
+        display: block;
+    }
+
+
+}
