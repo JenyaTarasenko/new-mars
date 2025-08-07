@@ -152,11 +152,13 @@ a {
 }
 .text-projects {
   margin-top: 140px;
-  margin-left: 40px;
+  margin-left: 90px;
+  color:#0E1520
 }
 .text-projects-title {
-  margin-top: 20px;
-  margin-left: 40px;
+  margin-top: 5px;
+  margin-left: 90px;
+  color:#0E1520
 }
 .button-card {
   margin-top: 40px;
