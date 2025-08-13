@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Tailwind Пример</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/CSS/style.css"/>
+  <link rel="stylesheet" href="/CSS/media.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- ✅ Подключаем Tailwind через CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- <script>
+      tailwind.config = {
+        
+        theme: {
+          extend: {
+            fontFamily: {
+              jost: ['Jost', 'sans-serif'],
+            }
+          }
+        }
+      }
+  </script> -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            jost: ['Jost', 'sans-serif'],
+          },
+          keyframes: {
+            
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+          },
+          animation: {
+            float: 'float 3s ease-in-out infinite',
+            'spin-slow': 'spin 5s linear infinite',
+            'spin-slow-new': 'spin 30s linear infinite',
+          },
+        },
+      },
+      plugins: [],
+    };
+  </script>
+  
+</head>
+
+
+<body>
+  <!------------------------------- Блок навигация ------------------------------------->
+  <nav class="text-white px-4 py-3 relative navigation">
+    <div class="flex items-center justify-between relative">
+      <!-- /* Лого слева */ -->
+      <div class="ml-10 logo-menu"></div>
+
+  
+      <ul class="hidden md:flex gap-10 text-sm font-light font-medium absolute left-1/2 transform -translate-x-1/2 font-jost text-uppercase">
+        <li><a href="#" class="hover:text-red-500 font-light">Главная</a></li>
+        <li><a href="#" class="hover:text-red-500 font-light">О нас</a></li>
+        <li><a href="#" class="hover:text-red-500 font-light">Проекты</a></li>
+        <li><a href="#" class="hover:text-red-500 font-light">Цены</a></li>
+        <li><a href="#" class="hover:text-red-500 font-light">Проекты</a></li>
+        <li><a href="#" class="hover:text-red-500 font-light">Блог</a></li>
+      </ul>
+
+      <ul class="flex gap-10 text-sm">
+        <li class="flex gap-2 mr-10">
+          <a href="/?lang=ru" class="hover:text-red-500 font-light">Ru</a>
+          <a href="/?lang=en" class="hover:text-red-500 font-light">En</a>
+        </li>
+      </ul>
+
+      <!-- /* Бургер справа на mobile */ -->
+      <!-- <div className="md:hidden">
+        <button onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div> -->
+    </div>
+
+    <!-- /* Меню на mobile */ -->
+    <!-- {isOpen && ( -->
+      <ul class="md:hidden flex flex-col mt-4 gap-2 text-sm font-medium">
+        <li><a href="#" class="hover:text-gray-300">Home</a></li>
+        <li><a href="#" class="hover:text-gray-300">About</a></li>
+        <li><a href="#" class="hover:text-gray-300">Contact</a></li>
+      </ul>
+    <!-- )} -->
+  </nav>
+  <!------------------------------- Блок навигация ------------------------------------->
+
+  <!-- <div class="flex flex-col items-center text-white">
+        <img src="/images/detail-main.png" alt="Image" class="w-full md:w-1/2  object-contain z-1" />
+        <div class="flex flex-col mt-5">
+            <div class="flex px-5 flex-col items-center justify-center">
+                <h2 class="font-jost  text-5xl font-extrabold text-white">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam consequuntur officia natus rerum, officiis assumenda quas unde eaque autem culpa nemo, similique voluptate cumque ex aliquam in harum possimus sapiente!</h2>
+                <h1 class="font-jost  text-xl font-normal text-zinc-500">mars studio</h1>
+        
+            </div>
+          
+
+            <div class="flex justify-start px-10 w-[300px] lg:w-[500px] mt-20 relative ">
+                <h3 class="font-jost text-rose-300 z-[100]">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita fugiat a inventore sunt unde quod cum aperiam hic. Commodi sed quas pariatur ipsam numquam nemo assumenda quod, vel exercitationem repellat.Lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa accusantium perferendis sequi eligendi excepturi voluptatem aliquid voluptas blanditiis. Non, vero sed! Ipsam veniam id ipsum tempora eius ex doloribus cupiditate?</h3>
+                <img src="/images/text-mars.svg" alt="logo-decor" class="animate-spin-slow absolute sm:ml-[300px] sm:mt-[100px] ml-[140px] mt-[150px] z-[1]"/>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- секция главная детальная  -->
+    <div class="flex flex-col items-center text-white max-w-screen-lg mx-auto px-4">
+        <!-- Картинка -->
+        <img src="/images/detail-main.png" alt="Image" class="w-full md:w-1/2 object-contain z-1" />
+      
+        <!-- Заголовки -->
+        <div class="flex flex-col mt-5 px-4 text-left">
+          <h2 class="font-jost font-extrabold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam consequuntur officia natus rerum...
+          </h2>
+          <h1 class="font-jost text-lg sm:text-xl font-normal text-red-600 mt-2">mars studio</h1>
+        </div>
+      
+        <!-- Текст + картинка-анимация -->
+        <div class="flex justify-start px-4 sm:px-10 mt-20 relative max-w-lg">
+          <h3 class="font-jost text-rose-200 text-sm sm:text-base md:text-lg z-[100]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita fugiat a inventore sunt Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dicta obcaecati, doloremque voluptas consectetur inventore error, perspiciatis magnam, iure tempore placeat porro sit. Nulla, non rem temporibus obcaecati veniam ipsum.</h3>
+          <img src="/images/receta-style.svg" alt="logo-decor"
+               class="animate-spin-slow absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-20 sm:w-32 md:w-40 z-[1]" />
+        </div>
+    </div>
+    <!-- секция главная детальная  -->
+    <!-- секция главная детальная блок2 sm:h-[1400px] md:h-[900px] -->
+    <div class="w-full h-[1500px]  bg-[url('/images/bg-detail.svg')] bg-cover bg-center flex items-center justify-center flex-col lg:flex-row">
+        
+            <div class="flex flex-col items-center justify-center gap-5">
+                <h4 class="font-jost text-lg sm:text-xl font-normal text-rose-100 max-w-[400px] px-10 ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In quod quas at vitae blanditiis voluptas rerum minus a qui aliquam eum nobis aperiam recusandae, quia soluta corporis modi delectus sint.</h4>
+                <img src="/images/about-text.svg" alt="" class="w-[300px]">
+            </div>
+
+            <div class="flex flex-col items-start justify-start gap-5">
+                <img src="/images/about-text.svg" alt="" class="w-[700px] h-[300px]">
+                <h4 class="font-jost text-lg sm:text-xl font-normal text-rose-100 max-w-[700px] px-10 ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In quod quas at vitae blanditiis voluptas rerum minus a qui aliquam eum nobis aperiam recusandae, quia soluta corporis modi delectus sint.</h4>
+               
+            </div>
+
+    </div>
+    
+
+ 
+    <!-- секция главная детальная блок2 -->
+      
+</body>
+</html>
